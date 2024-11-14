@@ -1,0 +1,6 @@
+configparser
+python-json-logger
+flask 
+flask-jsonpify 
+flask-restful
+flask-Response
