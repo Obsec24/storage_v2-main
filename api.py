@@ -4,6 +4,7 @@ import importlib.util
 import io
 import subprocess
 import time
+from dotenv import load_dotenv
 
 from flask import Flask, request, jsonify, send_file
 from flask_restful import Resource, Api
@@ -17,6 +18,7 @@ app = Flask(__name__)
 api = Api(app)
 
 #isascii = lambda s: len(s) == len(s.encode())
+load_dotenv("env.variables")
 
 #Configurar Filebeat
 DIR_BASE = os.getenv('DIR_BASE')
