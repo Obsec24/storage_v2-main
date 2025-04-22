@@ -1,5 +1,6 @@
 import os
-import imp
+#import imp
+import importlib.util
 import io
 import subprocess
 import time
@@ -22,7 +23,10 @@ DIR_BASE = os.getenv('DIR_BASE')
 TESTING_LABEL = os.getenv('TESTING_LABEL')
 LOG_FILE = os.getenv('LOGFILE')
 HELPER_JSON_LOGGER = os.getenv('HELPER')
-log = imp.load_source('log', HELPER_JSON_LOGGER)
+spec = importlib.util.spec_from_file_location('log', HELPER_JSON_LOGGER)
+log = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(log)
+#log = imp.load_source('log', HELPER_JSON_LOGGER)
 logger = log.init_logger(LOG_FILE)
 resutl = None
 success = True
