@@ -5,3 +5,4 @@ flask-jsonpify
 flask-restful==0.3.8
 flask-Response
 python-dotenv
+markupsafe==2.0.1
