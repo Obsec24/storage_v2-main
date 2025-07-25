@@ -1,7 +1,7 @@
 configparser
 python-json-logger
-flask 
-flask-jsonpify 
-flask-restful
+flask==1.1.4
+flask-jsonpify
+flask-restful==0.3.8
 flask-Response
 python-dotenv
